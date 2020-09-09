@@ -22,11 +22,46 @@ conda env create -f environment.yml
 ```
 
 ## Basic Usage
-Once PySoda is installed, solar time series can be generated as follows
+Once PySoda is installed, solar time series can be generated as follows.
+
+First, you'll need to create an object with the coordinates of interest
+```
+import soda
+lat = 33.9533
+lon = -117.3962
+
+site = soda.SolarSite(lat,lon)
+```
+Then, obtain the closest NSRDB point to the specified coordinates and retrieve the neccesary irradiance values
+```
+year = "2015"
+leap_year = False
+interval = "30"
+utc = False
+df = site.get_nsrdb_data(year,leap_year,interval,utc)
 ```
 
+You'll also need to specify the solar panel configuration and obtain the 30-min averaged solar time series
+```
+clearsky = False
+capacity = 1
+DC_AC_ratio = 1.2
+tilt = 33
+azimuth = 180
+inv_eff = 96
+losses = 15
+array_type = 0
+
+pwr = site.generate_solar_power_from_nsrdb(clearsky,capacity,DC_AC_ratio,tilt,azimuth,inv_eff,losses,array_type)
 ```
 
+Finally, you can generate stochastic solar time series at different time resolutions, e,g 1 second
+```
+resolution = "1S"
+solar_data = site.generate_high_resolution_power_data(resolution, date)
+```
+
+The function will return a pandas dataframe with the solar generation
 
 ## Citing SoDa
 
