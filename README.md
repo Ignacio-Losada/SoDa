@@ -1,6 +1,6 @@
 # SoDa
 
-<img src="" align="left" width="200" alt="SoDa logo">
+<img src="https://github.com/Ignacio-Losada/SoDa/blob/master/sodalogo.png" align="left" width="200" alt="SoDa logo">
 
 PySoDa is an irradiance-based synthetic solar photovoltaic generation tool able to produce solar time series up to a 1-second resolution using the National Solar Radiation Database (NSRDB). PySoDa uses NSRDB 30-min averages to generate stochastic time series using parameters learned from Phasor Measurement Unit (PMU) data
 
