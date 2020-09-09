@@ -21,6 +21,13 @@ cd SoDa
 conda env create -f environment.yml
 ```
 
+## Basic Usage
+Once PySoda is installed, solar time series can be generated as follows
+```
+
+```
+
+
 ## Citing SoDa
 
 If you find SoDa useful in your work, we kindly request that you cite the following [publication]():
