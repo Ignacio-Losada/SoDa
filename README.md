@@ -28,4 +28,3 @@ If you find SoDa useful in your work, we kindly request that you cite the follow
 
 ## License
 
-This code is provided under a BSD license as part of the Multi-Infrastructure Control and Optimization Toolkit (MICOT) project, LA-CC-13-108.
