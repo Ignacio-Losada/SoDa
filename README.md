@@ -2,7 +2,7 @@
 
 <img src="https://github.com/Ignacio-Losada/SoDa/blob/master/sodalogo.png" align="left" width="200" alt="SoDa logo">
 
-SoDa is an irradiance-based synthetic solar photovoltaic generation tool able to produce solar time series up to a 1-second resolution using the National Solar Radiation Database (NSRDB). PySoDa uses NSRDB 30-min averages to generate stochastic time series using parameters learned from Phasor Measurement Unit (PMU) data
+SoDa is  an   irradiance-based  synthetic  Solar  Data  generation  tool  to  generate  realistic sub-minute  solar  photovoltaic  (PV)  output  power  time  series. Soda  emulates  the  weather  pattern  for  a  certain  geographical location using 30-min averaged irradiance and cloud type information from the National Solar Radiation Database (NSRDB)
 
 
 
@@ -20,7 +20,7 @@ If you find SoDa useful in your work, we kindly request that you cite the follow
   booktitle = {2020 IEEE International Conference on Smart Grid Communications (SmartGridComm)},
   year = {2020},
   month = {November},
-  pages = {},
+  pages = {1-6},
   doi = {}
 }
 ```
