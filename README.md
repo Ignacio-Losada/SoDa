@@ -55,8 +55,9 @@ array_type = 0
 pwr = site.generate_solar_power_from_nsrdb(clearsky,capacity,DC_AC_ratio,tilt,azimuth,inv_eff,losses,array_type)
 ```
 
-Finally, you can generate stochastic solar time series at different time resolutions, e.g. 1 second
+Finally, you can generate stochastic solar time series for a given date at different time resolutions, e.g. 1 second
 ```
+date = "2015-01-10"
 resolution = "1S"
 solar_data = site.generate_high_resolution_power_data(resolution, date)
 ```
