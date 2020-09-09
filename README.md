@@ -32,7 +32,7 @@ lon = -117.3962
 
 site = soda.SolarSite(lat,lon)
 ```
-Then, obtain the closest NSRDB point to the specified coordinates and retrieve the neccesary irradiance values
+Then, obtain the closest NSRDB point to the specified coordinates and retrieve the neccesary irradiance values. We recommend retrieving the 30-min average NSRDB irradiance data to obtain the best results
 ```
 year = "2015"
 leap_year = False
