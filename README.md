@@ -62,7 +62,7 @@ resolution = "1S"
 solar_data = site.generate_high_resolution_power_data(resolution, date)
 ```
 
-The function will return a pandas dataframe with the solar generation
+This function will return a pandas dataframe with the solar generation
 
 ## Citing SoDa
 
