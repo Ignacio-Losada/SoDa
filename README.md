@@ -1,4 +1,4 @@
-# SoDa
+# PySoDa
 
 <img src="https://github.com/Ignacio-Losada/SoDa/blob/master/sodalogo.png" align="left" width="200" alt="SoDa logo">
 
