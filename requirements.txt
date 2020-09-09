@@ -4,3 +4,4 @@ pandas
 numpy
 requests>=2.22.0
 matplotlib
+git+https://github.com/Ignacio-Losada/SoDa.git
