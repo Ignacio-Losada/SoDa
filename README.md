@@ -7,15 +7,17 @@ SoDa is  an   irradiance-based  synthetic  Solar  Data  generation  tool  to  ge
 
 
 
-## Installation with Git (Python)
-```
+## Installation (Python)
+Use Git to install pysoda in your current python environment
+```bash
 git clone https://github.com/Ignacio-Losada/SoDa.git
 cd SoDa
 pip3 install -r requirements.txt
 ```
 
 ## Installation with Git (Conda)
-```
+Use Git to install a conda environment for pysoda
+```bash
 git clone https://github.com/Ignacio-Losada/SoDa.git
 cd SoDa
 conda env create -f environment.yml
