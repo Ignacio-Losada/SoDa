@@ -10,7 +10,7 @@ def _read_requirements_file():
 
 setup(
     name='pysoda',
-    version=__version__,
+    version="0.1.0",
     packages=find_packages(),
     license='MIT',
     description='SoDa is an irradiance-based synthetic Solar Data generation tool to generate realistic sub-minute solar photovoltaic (PV) power time series',
