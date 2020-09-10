@@ -62,7 +62,9 @@ resolution = "1S"
 solar_data = site.generate_high_resolution_power_data(resolution, date)
 ```
 
-This function will return a pandas dataframe with the solar generation
+This function will return a pandas dataframe with the solar generation. And we compare our results 
+<img src="https://github.com/Ignacio-Losada/SoDa/blob/master/30minvssecond.png" align="center" width="200" alt="SoDa results">
+
 
 ## Citing SoDa
 
