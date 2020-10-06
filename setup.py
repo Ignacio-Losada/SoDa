@@ -18,5 +18,5 @@ setup(
     url='https://github.com/Ignacio-Losada/SoDa',
     author='Ignacio Losada Carreno',
     author_email='ilosadac@asu.edu',
-    scripts=['SoDa/__init__.py',]
+    scripts=['soda/__init__.py',]
 )
