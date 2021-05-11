@@ -1,4 +1,4 @@
-# PySoDa
+# Log(v)  3LPF
 
 <img src="https://github.com/Ignacio-Losada/SoDa/blob/master/sodalogo.png" align="right" width="200" alt="SoDa logo">
 
