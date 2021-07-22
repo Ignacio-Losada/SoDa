@@ -5,6 +5,8 @@ import requests,io
 from scipy.stats import norm
 from scipy import linalg
 from math import sqrt,exp,log,cos,pi
+from scipy.linalg import matmul_toeplitz
+
 
 
 class SolarSite(object):
@@ -179,10 +181,16 @@ class SolarSite(object):
             Date in YYYY-MM-DD format. For example "2015-07-14"
             
         """
+        date_index2 = pd.date_range(start='2015-01-10', end = '2015-01-10' + ' 23:59:59', freq='1S')
         ts = self.solar_power_from_nsrdb[date].resample("1S").interpolate(method="linear")
+        ts = ts.reindex(date_index2).fillna(0)
+
         ts *= (7.5/self.capacity)
 
         ct = self.cloud_type[date].resample("1S").pad()
+        ct = ct.reindex(date_index2).fillna(0)
+        ct = ct.astype(int)
+
 
         σ = 0.0003447
 
@@ -193,13 +201,13 @@ class SolarSite(object):
         pw = np.array([0.001941, 0.008969, 0.003452, 0.002801, 0.004097, 0, 0.001111, 0.004242, 0.008000,0.002801,0.001941,0.003452,0.003452])
 
         df = ts[ts.values>0]
-        df["CloudType"] = ct[df.index]
+        df.insert(1, "CloudType", ct[df.index].values)
 
         M_hat = 600
         N = len(df)
         # N = 86400
         hm = np.array([exp(-t**2/2)*cos(5*t) for t in np.linspace(-4,4,M_hat)])
-        hw = np.array([0.54-0.46*cos(2*pi*t/(M_hat-1)) for t in range(0,M_hat)]);
+        hw = np.array([0.54-0.46*cos(2*pi*t/(M_hat-1)) for t in range(0,M_hat)])
 
         padding1 = np.zeros(N - M_hat, hm.dtype)
         padding2 = np.zeros(N - M_hat - 1, hm.dtype)
@@ -210,8 +218,6 @@ class SolarSite(object):
         first_col2 = np.r_[hw, padding1]
         first_row2 = np.r_[hw[0], padding2]
 
-        Tm = linalg.toeplitz(first_col1, first_row1)
-        Tw = linalg.toeplitz(first_col2, first_row2)
 
         zw = []
         zm = []
@@ -240,7 +246,8 @@ class SolarSite(object):
         boolean = df["CloudType"].values<2
         η[boolean] = self.trunc_gauss(0,df.generation[boolean],df.generation[boolean],σ,sum(boolean))
 
-        generated_ts = df.generation.values.reshape(-1,1)+(abs(Tm))@(bm.reshape(-1,1)*zm)-Tw@(bw.reshape(-1,1)*zw)+η.reshape(-1,1)
+        generated_ts = df.generation.values.reshape(-1,1) + matmul_toeplitz((abs(first_col1), abs(first_row1)), (bm.reshape(-1,1)*zm)) - \
+            matmul_toeplitz((first_col2, first_row2), ((bw.reshape(-1,1)*zw))) +η.reshape(-1,1)
         ts["HighRes"] = 0.0
         ts.loc[df.index,"HighRes"] = generated_ts.T[0]
         ts.HighRes[ts.HighRes<0] = 0
