@@ -111,7 +111,7 @@ class SolarSite(object):
                 self.leap_year = leap_year
                 self.interval = interval
                 self.utc = utc
-                IrradianceData.get_nsrdb_data(self)
+                self.get_nsrdb_data(self)
 
         if clearsky==True:
             clearsky_str="Clearsky "
