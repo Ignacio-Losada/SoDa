@@ -1,0 +1,9 @@
+README.md
+setup.py
+pysoda.egg-info/PKG-INFO
+pysoda.egg-info/SOURCES.txt
+pysoda.egg-info/dependency_links.txt
+pysoda.egg-info/requires.txt
+pysoda.egg-info/top_level.txt
+soda/__init__.py
+soda/solar_data.py

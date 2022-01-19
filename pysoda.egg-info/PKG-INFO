@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: pysoda
+Version: 0.1.0
+Summary: SoDa is an irradiance-based synthetic Solar Data generation tool to generate realistic sub-minute solar photovoltaic (PV) power time series
+Home-page: https://github.com/Ignacio-Losada/SoDa
+Author: Ignacio Losada Carreno
+Author-email: il244@cornell.edu
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
