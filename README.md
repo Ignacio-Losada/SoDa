@@ -13,6 +13,7 @@ Use Git to install pysoda in your current python environment
 git clone https://github.com/Ignacio-Losada/SoDa.git
 cd SoDa
 pip3 install -r requirements.txt
+python3 setup.py develop
 ```
 
 ## Installation with Git (Conda)
@@ -21,6 +22,7 @@ Use Git to install a conda environment for pysoda
 git clone https://github.com/Ignacio-Losada/SoDa.git
 cd SoDa
 conda env create -f environment.yml
+python3 setup.py develop
 ```
 
 ## Basic Usage
