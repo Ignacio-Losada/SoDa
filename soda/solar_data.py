@@ -66,7 +66,7 @@ class SolarSite(object):
         df=df.set_index(idx)
 
         self.resource_data = df
-        self.meta_resource_data = meta.T.to_dict('r')[0]
+        self.meta_resource_data = meta.T.to_dict('records')[0]
         
         return df
     
